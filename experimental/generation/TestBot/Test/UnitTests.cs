@@ -12,7 +12,6 @@ namespace Test
         static string Execute(string cmd, bool useCmd = true)
         {
             var cwd = Path.Join(Path.GetTempPath(), "TestBot");
-            var startInfo = useCmd ? new ProcessStartInfo("cmd.exe", $"/C {cmd}") : new ProcessStartInfo(cmd);
             startInfo.WorkingDirectory = cwd;
             startInfo.UseShellExecute = false;
             startInfo.CreateNoWindow = true;
